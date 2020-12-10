@@ -14,6 +14,8 @@ namespace App;
             // extract URI
             $this->arrURI=explode('/',$requestString);
             array_shift($this->arrURI);
+            var_dump($this->arrURI);
+            die;
             $this->extractURI();
         }
 
