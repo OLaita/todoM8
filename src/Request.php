@@ -4,8 +4,8 @@ namespace App;
 
     class Request{
 
-        private string $controller, $action, $method;
-        private array $params;
+        private $controller, $action, $method;
+        private $params;
 
         protected $arrURI;
 
