@@ -14,7 +14,7 @@
         "dbname":"LaOs_prouf1",
         "dbuser":"LaOs_prouf1",
         "dbpass":"oscar7",
-        "web":"/",
+        "web":"/m7/todofw/",
         "root":"/m7/todofw/"
     }
 }

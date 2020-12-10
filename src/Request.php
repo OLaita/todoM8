@@ -10,11 +10,12 @@ namespace App;
         protected $arrURI;
 
         function __construct(){
-            $requestString = \htmlentities($_SERVER['REQUEST_URI']);
-            // extract URI
-            $this->arrURI=explode('/',$requestString);
-            array_shift($this->arrURI);
-            
+            $requestString=\htmlentities($_SERVER['REQUEST_URI']);
+            //adaptar el sistema root a domini o carpeta
+            $reqStr=$this->get_diff($requestString,ROOT);  
+            //extract URI
+            $this->arrURI=explode('/',$reqStr);
+           
             $this->extractURI();
         }
 
