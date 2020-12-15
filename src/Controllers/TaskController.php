@@ -329,10 +329,8 @@ use App\Session;
         
             $stmt = $db->prepare("INSERT INTO task_item (description, completed, task) VALUES (:description,0,:task)");
         
-            if($stmt->execute([':description'=>$description, ':task'=>$_SESSION['idTask']]) ){
+            if($stmt->execute([':description'=>$description, ':task'=>$_SESSION['idTask']])){
                 header('Location: '.BASE.'index/allTask');
-            }else{
-                header('Location: '.BASE.'index/newSubTask');
             }
         }
 
@@ -340,8 +338,9 @@ use App\Session;
             $command3 = $db->prepare("DELETE FROM task WHERE id=:id");
             $command4 = $db->prepare("DELETE FROM task_item WHERE task=:task");
             try{
-                $command3->execute([':id'=>$deleteId]);
                 $command4->execute([':task'=>$deleteId]);
+                $command3->execute([':id'=>$deleteId]);
+                header('Location: '.BASE.'index/allTask');
             }catch(PDOException $e){
                 die($e->getMessage());
             }
@@ -409,7 +408,6 @@ use App\Session;
             if(isset($_POST['ck'])) {
                 foreach ($_POST['ck'] as $key => $value) {
                     self::deleteItems($db, $value);
-                    header('Location: '.BASE.'index/allTask');
                 }
             }
         
