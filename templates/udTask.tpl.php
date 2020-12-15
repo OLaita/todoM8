@@ -21,7 +21,7 @@
     <div class="container">
     
     
-    <form class="d-flex justify-content-cente align-items-center flex-column" action="/task/updateTask" method="post">
+    <form class="d-flex justify-content-cente align-items-center flex-column" action="<?= BASE ?>task/updateTask" method="post">
 
     <div class="col-md-6 text-center form-group">
             <label for="name">Task Name:</label>

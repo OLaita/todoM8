@@ -57,16 +57,16 @@ use App\Session;
                     if($row['completed'] == 0){
                         echo "<td>
                         <button class='btn' type='submit' name='ed[<?=$k?>]' value='".$_SESSION['id'.$i]."'>
-                        <img src='/public/Imagenes/editar.svg'alt='Submit' width='48' height='48'>
+                        <img src='".BASE."public/Imagenes/editar.svg'alt='Submit' width='48' height='48'>
                         </button>
                         <button class='btn' type='submit' name='ck[<?=$k?>]' value='".$_SESSION['id'.$i]."'>
-                        <img src='/public/Imagenes/basura.svg'alt='Submit' width='48' height='48'>
+                        <img src='".BASE."public/Imagenes/basura.svg'alt='Submit' width='48' height='48'>
                         </button>
                         <button class='btn' type='submit' name='sub[<?=$k?>]' value='".$_SESSION['id'.$i]."'>
-                        <img src='/public/Imagenes/mas.svg' alt='Submit' width='48' height='48'>
+                        <img src='".BASE."public/Imagenes/mas.svg' alt='Submit' width='48' height='48'>
                         </button>
                         <a href='#demo".$k."' data-toggle='collapse' class='btn ' name='' value='".$_SESSION['id'.$i]."'>
-                        <img src='/public/Imagenes/flecha-hacia-abajo.svg' alt='' width='48' height='48'>
+                        <img src='".BASE."public/Imagenes/flecha-hacia-abajo.svg' alt='' width='48' height='48'>
                         </a></td>";
                     }                        
                 echo "</tr>";
@@ -85,10 +85,10 @@ use App\Session;
                             echo "<tr class='row'>";
                             echo "<td class='col-xl-12'><div id='demo".$k."' class='collapse'>
                                 <button class='btn' type='submit' name='eds[<?=$i2?>]' value='".$_SESSION['task'.$i2]."'>
-                                    <img src='/public/Imagenes/editar.svg' alt='Submit' width='48' height='48'>
+                                    <img src='".BASE."public/Imagenes/editar.svg' alt='Submit' width='48' height='48'>
                                 </button>
                                 <button class='btn' type='submit' name='cks[<?=$i2?>]' value='".$_SESSION['task'.$i2]."'>
-                                    <img src='/public/Imagenes/basura.svg' alt='Submit' width='48' height='48'>
+                                    <img src='".BASE."public/Imagenes/basura.svg' alt='Submit' width='48' height='48'>
                                 </button></div></td>";
                         echo "</tr>";
                         $i2++;
@@ -153,16 +153,16 @@ use App\Session;
                         if($row['completed'] == 0){
                             echo "<td>
                             <button class='btn' type='submit' name='ed[<?=$k?>]' value='".$_SESSION['id'.$i]."'>
-                            <img src='/public/Imagenes/editar.svg'alt='Submit' width='48' height='48'>
+                            <img src='".BASE."public/Imagenes/editar.svg'alt='Submit' width='48' height='48'>
                             </button>
                             <button class='btn' type='submit' name='ck[<?=$k?>]' value='".$_SESSION['id'.$i]."'>
-                            <img src='/public/Imagenes/basura.svg'alt='Submit' width='48' height='48'>
+                            <img src='".BASE."public/Imagenes/basura.svg'alt='Submit' width='48' height='48'>
                             </button>
                             <button class='btn' type='submit' name='sub[<?=$k?>]' value='".$_SESSION['id'.$i]."'>
-                            <img src='/public/Imagenes/mas.svg' alt='Submit' width='48' height='48'>
+                            <img src='".BASE."public/Imagenes/mas.svg' alt='Submit' width='48' height='48'>
                             </button>
                             <a href='#demo1".$k."' data-toggle='collapse' class='btn ' name='' value='".$_SESSION['id'.$i]."'>
-                            <img src='/public/Imagenes/flecha-hacia-abajo.svg' alt='' width='48' height='48'>
+                            <img src='".BASE."public/Imagenes/flecha-hacia-abajo.svg' alt='' width='48' height='48'>
                             </a></td>";
                         }                        
                     echo "</tr>";
@@ -181,10 +181,10 @@ use App\Session;
                                 echo "<tr class='row'>";
                                 echo "<td class='col-xl-12'><div id='demo1".$k."' class='collapse'>
                                     <button class='btn' type='submit' name='eds[<?=$i2?>]' value='".$_SESSION['task'.$i2]."'>
-                                        <img src='/public/Imagenes/editar.svg' alt='Submit' width='48' height='48'>
+                                        <img src='".BASE."public/Imagenes/editar.svg' alt='Submit' width='48' height='48'>
                                     </button>
                                     <button class='btn' type='submit' name='cks[<?=$i2?>]' value='".$_SESSION['task'.$i2]."'>
-                                        <img src='/public/Imagenes/basura.svg' alt='Submit' width='48' height='48'>
+                                        <img src='".BASE."public/Imagenes/basura.svg' alt='Submit' width='48' height='48'>
                                     </button></div></td>";
                             echo "</tr>";
                             $i2++;
@@ -251,16 +251,16 @@ use App\Session;
                         if($row['completed'] == 0){
                             echo "<td>
                             <button class='btn' type='submit' name='ed[<?=$k?>]' value='".$_SESSION['id'.$i]."'>
-                            <img src='/public/Imagenes/editar.svg'alt='Submit' width='48' height='48'>
+                            <img src='".BASE."public/Imagenes/editar.svg'alt='Submit' width='48' height='48'>
                             </button>
                             <button class='btn' type='submit' name='ck[<?=$k?>]' value='".$_SESSION['id'.$i]."'>
-                            <img src='/public/Imagenes/basura.svg'alt='Submit' width='48' height='48'>
+                            <img src='".BASE."public/Imagenes/basura.svg'alt='Submit' width='48' height='48'>
                             </button>
                             <button class='btn' type='submit' name='sub[<?=$k?>]' value='".$_SESSION['id'.$i]."'>
-                            <img src='/public/Imagenes/mas.svg' alt='Submit' width='48' height='48'>
+                            <img src='".BASE."public/Imagenes/mas.svg' alt='Submit' width='48' height='48'>
                             </button>
                             <a href='#demo2".$k."' data-toggle='collapse' class='btn ' name='' value='".$_SESSION['id'.$i]."'>
-                            <img src='/public/Imagenes/flecha-hacia-abajo.svg' alt='' width='48' height='48'>
+                            <img src='".BASE."public/Imagenes/flecha-hacia-abajo.svg' alt='' width='48' height='48'>
                             </a></td>";
                         }                        
                     echo "</tr>";
@@ -279,10 +279,10 @@ use App\Session;
                                 echo "<tr class='row'>";
                                 echo "<td class='col-xl-12'><div id='demo2".$k."' class='collapse'>
                                     <button class='btn' type='submit' name='eds[<?=$i2?>]' value='".$_SESSION['task'.$i2]."'>
-                                        <img src='/public/Imagenes/editar.svg' alt='Submit' width='48' height='48'>
+                                        <img src='".BASE."public/Imagenes/editar.svg' alt='Submit' width='48' height='48'>
                                     </button>
                                     <button class='btn' type='submit' name='cks[<?=$i2?>]' value='".$_SESSION['task'.$i2]."'>
-                                        <img src='/public/Imagenes/basura.svg' alt='Submit' width='48' height='48'>
+                                        <img src='".BASE."public/Imagenes/basura.svg' alt='Submit' width='48' height='48'>
                                     </button></div></td>";
                             echo "</tr>";
                             $i2++;

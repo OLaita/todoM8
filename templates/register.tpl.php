@@ -13,7 +13,7 @@
     
     </main>
 
-    <form class="d-flex justify-content-cente align-items-center flex-column" action="/user/login_register" method="post">
+    <form class="d-flex justify-content-cente align-items-center flex-column" action="<?= BASE ?>user/login_register" method="post">
     <label for="correo">Email:</label>
     <div class="input-group col-md-4 text-center form-group">
             <input type="text" class="form-control text-center" placeholder="Enter email" id="email" name="correo">

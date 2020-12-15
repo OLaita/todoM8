@@ -20,7 +20,7 @@
     <div class="container">
     
     
-    <form class="" action="/task/actions" method="post">
+    <form class="" action="<?= BASE ?>task/actions" method="post">
     <h4 class="text-center">Tareas para hoy</h4>
     
     <?php
@@ -31,7 +31,7 @@
     
     </form>
 
-    <form class="" action="/task/actions" method="post">
+    <form class="" action="<?= BASE ?>task/actions" method="post">
     <h4 class="text-center">Tareas para otros dias</h4>
 
     <?php
@@ -42,7 +42,7 @@
 
     </form>
 
-    <form class="" action="/task/actions" method="post">
+    <form class="" action="<?= BASE ?>task/actions" method="post">
     <h4 class="text-center">Tareas Retrasadas</h4>
 
     <?php

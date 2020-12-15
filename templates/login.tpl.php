@@ -18,7 +18,7 @@
     
     </main>
 
-    <form class="d-flex justify-content-cente align-items-center flex-column" action="/user/login_register" method="post">
+    <form class="d-flex justify-content-cente align-items-center flex-column" action="<?= BASE ?>user/login_register" method="post">
         <div class="col-md-6 text-center form-group">
             <label for="name">Name:</label>
             <input type="text" class="form-control text-center" value="<?php if(isset($_COOKIE["name"])) { echo $_COOKIE["name"]; } ?>" placeholder="Enter user" id="name" name="name">

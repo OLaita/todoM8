@@ -20,7 +20,7 @@
     
     <h4>Crear tarea</h4>
 
-    <form class="d-flex justify-content-cente align-items-center flex-column" action="/task/newTask" method="post">
+    <form class="d-flex justify-content-cente align-items-center flex-column" action="<?= BASE ?>task/newTask" method="post">
         <div class="col-md-6 text-center form-group">
             <label for="name">Descripcion:</label>
             <input type="text" class="form-control text-center" placeholder="Enter description" id="description" name="description">
