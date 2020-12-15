@@ -20,6 +20,14 @@
     
     <h4>Crear subtarea</h4>
 
+    <?php
+
+        if(isset($_COOKIE['mSubTarea'])){
+            echo "<h4 class='text-center'>".$_COOKIE['mSubTarea']."</h4>";
+        }
+
+    ?>
+
     <form class="d-flex justify-content-cente align-items-center flex-column" action="<?= BASE ?>task/addSubTask" method="post">
         <div class="col-md-6 text-center form-group">
             <label for="name">Descripcion:</label>

@@ -326,11 +326,17 @@ use App\Session;
         function addSubTask(){
             $db = DB::singleton();
             $description = filter_input(INPUT_POST, "description");
+            
+            if($description == null){
+                setcookie("mSubTarea", "El campo descripcion no puede estar vacio",time()+1,'/');
+                header('Location: '.BASE.'index/newSubTask');
+            }else{
         
-            $stmt = $db->prepare("INSERT INTO task_item (description, completed, task) VALUES (:description,0,:task)");
-        
-            if($stmt->execute([':description'=>$description, ':task'=>$_SESSION['idTask']])){
-                header('Location: '.BASE.'index/allTask');
+                $stmt = $db->prepare("INSERT INTO task_item (description, completed, task) VALUES (:description,0,:task)");
+            
+                if($stmt->execute([':description'=>$description, ':task'=>$_SESSION['idTask']])){
+                    header('Location: '.BASE.'index/allTask');
+                }
             }
         }
 
@@ -390,6 +396,9 @@ use App\Session;
             $idsTask = $_SESSION['idSubTask'];
 
             if(isset($nTask)){
+                if(isset($nTask)){
+                    $nTask = $_SESSION['nSubTask'];
+                }
                 $command3 = $db->prepare("UPDATE task_item SET description=:description WHERE id=:id");
                 try{
                     $command3->execute([':description'=>$nTask, ':id'=>$idsTask]);
