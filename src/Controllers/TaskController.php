@@ -331,6 +331,8 @@ use App\Session;
         
             if($stmt->execute([':description'=>$description, ':task'=>$_SESSION['idTask']]) ){
                 header('Location: '.BASE.'index/allTask');
+            }else{
+                header('Location: '.BASE.'index/newSubTask');
             }
         }
 
