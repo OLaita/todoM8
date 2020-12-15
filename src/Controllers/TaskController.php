@@ -371,10 +371,14 @@ use App\Session;
             $dTask = filter_input(INPUT_POST, "dt");
             $idTask = $_SESSION['idTask'];
 
+            $nTask = trim($nTask);
+
+            if($nTask == ""){
+                $nTask = $_SESSION['nTask'];
+            }
+
             if(isset($nTask) && isset($dTask)){
-                if(isset($nTask)){
-                    $nTask = $_SESSION['nTask'];
-                }
+                
                 $command3 = $db->prepare("UPDATE task SET description=:description, due_date=:due_date WHERE id=:id");
                 try{
                     $command3->execute([':description'=>$nTask, ':due_date'=>$dTask, ':id'=>$idTask]);
@@ -395,10 +399,13 @@ use App\Session;
             $nTask = filter_input(INPUT_POST, "tn");
             $idsTask = $_SESSION['idSubTask'];
 
+            $nTask = trim($nTask);
+
+            if($nTask == ""){
+                $nTask = $_SESSION['nSubTask'];
+            }
+
             if(isset($nTask)){
-                if(isset($nTask)){
-                    $nTask = $_SESSION['nSubTask'];
-                }
                 $command3 = $db->prepare("UPDATE task_item SET description=:description WHERE id=:id");
                 try{
                     $command3->execute([':description'=>$nTask, ':id'=>$idsTask]);
