@@ -19,7 +19,7 @@ use App\Session;
             session_destroy();
             $_COOKIE['name'] == "";
             $_COOKIE['passwd'] == "";
-            header('Location: /');
+            header('Location: '.BASE.'');
         }
 
         function insertItems($db,$email,$user,$pass){
