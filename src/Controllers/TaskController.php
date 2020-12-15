@@ -317,9 +317,9 @@ use App\Session;
 
             if($stmt->execute([':description'=>$description, ':user'=>$userID,
                 ':due_date'=>$fecha, ':completed'=>0]) ){
-                header('Location: /index/allTask');
+                header('Location: '.BASE.'index/allTask');
             }else{
-                header('Location: /index/newTask');
+                header('Location: '.BASE.'index/newTask');
             }
         }
 
@@ -330,7 +330,7 @@ use App\Session;
             $stmt = $db->prepare("INSERT INTO task_item (description, completed, task) VALUES (:description,0,:task)");
         
             if($stmt->execute([':description'=>$description, ':task'=>$_SESSION['idTask']]) ){
-                header('Location: /index/allTask');
+                header('Location: '.BASE.'index/allTask');
             }
         }
 
@@ -371,12 +371,12 @@ use App\Session;
                 $command3 = $db->prepare("UPDATE task SET description=:description, due_date=:due_date WHERE id=:id");
                 try{
                     $command3->execute([':description'=>$nTask, ':due_date'=>$dTask, ':id'=>$idTask]);
-                    header('Location: /index/allTask');
+                    header('Location: '.BASE.'index/allTask');
                 }catch(PDOException $e){
                     die($e->getMessage());
                 }
             }else{
-                header('Location: /index/udTask');
+                header('Location: '.BASE.'index/udTask');
             }
 
         }
@@ -392,12 +392,12 @@ use App\Session;
                 $command3 = $db->prepare("UPDATE task_item SET description=:description WHERE id=:id");
                 try{
                     $command3->execute([':description'=>$nTask, ':id'=>$idsTask]);
-                    header('Location: /index/allTask');
+                    header('Location: '.BASE.'index/allTask');
                 }catch(PDOException $e){
                     die($e->getMessage());
                 }
             }else{
-                header('Location: /index/udSubTask');
+                header('Location: '.BASE.'index/udSubTask');
             }
 
         }
@@ -407,7 +407,7 @@ use App\Session;
             if(isset($_POST['ck'])) {
                 foreach ($_POST['ck'] as $key => $value) {
                     self::deleteItems($db, $value);
-                    header('Location: /index/allTask');
+                    header('Location: '.BASE.'index/allTask');
                 }
             }
         
@@ -420,14 +420,14 @@ use App\Session;
                         $_SESSION['dTask'] = $row['due_date'];
                     }
 
-                    header('Location: /index/udTask');
+                    header('Location: '.BASE.'index/udTask');
                 }
             }
 
             if(isset($_POST['sub'])) {
                 foreach ($_POST['sub'] as $key => $value) {
                     $_SESSION['idTask'] = $value;
-                    header('Location: /index/newSubTask');
+                    header('Location: '.BASE.'index/newSubTask');
                 }
             }
 
@@ -440,14 +440,14 @@ use App\Session;
                     foreach($result as $row){
                         $_SESSION['nSubTask'] = $row['description'];
                     }
-                    header('Location: /index/udSubTask');
+                    header('Location: '.BASE.'index/udSubTask');
                 }
             }
 
             if(isset($_POST['cks'])) {
                 foreach ($_POST['cks'] as $key => $value) {
                     self::deleteSubItems($db, $value);
-                    header('Location: /index/allTask');
+                    header('Location: '.BASE.'index/allTask');
                 }
             }
         }

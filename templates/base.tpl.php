@@ -33,7 +33,7 @@
         if(isset($_SESSION['userLogged'])){
             echo "<li class='list-group-item'><a href='".BASE."index/profile'>Cuenta</a></li>";
             echo "<li class='list-group-item'><a href='".BASE."index/allTask'>Todas las tareas</a></li>";
-            echo "<li class='list-group-item'><a href='".BASE."index/newTask'><img src='/public/Imagenes/mas.svg' width='48' height='48' /></a></li>";
+            echo "<li class='list-group-item'><a href='".BASE."index/newTask'><img src='".BASE."public/Imagenes/mas.svg' width='48' height='48' /></a></li>";
         }
     ?>
 
