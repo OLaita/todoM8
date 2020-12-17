@@ -4,6 +4,10 @@
 
     use App\Controllers\TaskController;
 
+    if(!isset($_SESSION['userLogged'])){
+        header('Location: '.BASE.'index/login ');
+    }
+
 
 ?>
 

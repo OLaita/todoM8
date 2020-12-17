@@ -13,7 +13,7 @@
     
         <article class="text-center">
             <h2>LOGIN</h2>
-            <h4><?php if(isset($_COOKIE['mostrar'])) echo $_COOKIE['mostrar']; ?></h4>
+            <h4><?php if(isset($_COOKIE['mostrar'])){ echo $_COOKIE['mostrar']; } ?></h4>
         </article>
     
     </main>

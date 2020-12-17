@@ -45,7 +45,7 @@ use App\Session;
             if ($result > 0) {
                 if(isset($reg)){
                     setcookie("regis", "USUARIO EXISTENTE",time()+60,'/');
-                    header('Location: '.BASE.'user/register');
+                    header('Location: '.BASE.'index/register');
                     echo "registro";
                 }else{
                     $usuario = $row[0];
@@ -56,8 +56,8 @@ use App\Session;
                         $_SESSION["userLogged"] = $usuario['uname'];
                         header('Location: '.BASE.'index/allTask');
                     }else{
-                        header('Location: '.BASE.'index/login');
                         setcookie("mostrar","Usuario o contraseña equivocados",time()+60,'/');
+                        header('Location: '.BASE.'index/login');
                     }
                 }
                 
@@ -97,24 +97,29 @@ use App\Session;
             if($name != null && $pass != null){
 
                 if(isset($reg)){
+                    
                     if($pass == $pass2){
-                        $this->buscarUsuarios($db, $correo, $name, $pass);
+                        
+                        self::buscarUsuarios($db, $correo, $name, $pass);
+                        
                     }else{
-                        setcookie("mostrar", "Las contraseñas no coinciden");
-                        header('Location: '.BASE.'user/register');
+                        setcookie("mostrar", "Las contraseñas no coinciden", time()+2, '/');
+                        header('Location: '.BASE.'index/register');
                     }
                 }else{
                     if(isset($save)){
                         setcookie("name", $name,time()+60,'/');
                         $passH = password_hash($pass, PASSWORD_BCRYPT, ["cost"=>4]);
-                        setcookie("passwd", $passH,time()+60,'/');
+                        setcookie("passwd", $pass, time()+60, '/');
+                        $_SESSION["nameSES"] = $name;
+                        $_SESSION["passwdSES"] = $pass;
                     }
                     self::buscarUsuarios($db, $correo, $name, $pass);
                 }
             
             }else{
-                $mostrar = setcookie("mostrar", "El usuario o contraseña vacios");
-                header('Location: '.BASE.'user/login');
+                setcookie("mostrar", "El usuario o contraseña vacios", time()+2, '/');
+                header('Location: '.BASE.'index/login');
             }
         }
 
