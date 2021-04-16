@@ -111,7 +111,7 @@ use App\Session;
             
         }
 
-        static function showTaskBien(){
+        function showTaskBien(){
 
             $db = DB::singleton();
 
@@ -209,7 +209,7 @@ use App\Session;
         }
 
 
-        function showTaskret(){
+        static function showTaskret(){
 
             $db = DB::singleton();
 
