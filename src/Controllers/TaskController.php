@@ -15,7 +15,7 @@ use App\Session;
             parent::__construct($request, $session);
         }
 
-        function showTaskNow(){
+        static function showTaskNow(){
 
             $db = DB::singleton();
 
@@ -111,7 +111,7 @@ use App\Session;
             
         }
 
-        function showTaskBien(){
+        static function showTaskBien(){
 
             $db = DB::singleton();
 

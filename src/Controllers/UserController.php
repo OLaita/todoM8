@@ -80,7 +80,7 @@ use App\Session;
 
             $db = DB::singleton();
             
-            $correo = filter_input(INPUT_POST, "correo");
+            //$correo = filter_input(INPUT_POST, "correo");
             $correo = $correo."@correo.com";
             $name = filter_input(INPUT_POST, "name");
             $pass = filter_input(INPUT_POST, "pass");
