@@ -27,12 +27,12 @@ namespace App;
         }
 
         private function env(){
-            $ipAddress = gethostbyname($_SERVER['SERVER_NAME']);
+            /*$ipAddress = gethostbyname($_SERVER['SERVER_NAME']);
             if($ipAddress == '127.0.0.1'){
                 return 'dev';
             }else{
                 return 'pro';
-            }
+            }*/
         }
 
         private function loadConf(){
