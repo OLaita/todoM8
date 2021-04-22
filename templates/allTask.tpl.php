@@ -37,7 +37,7 @@
 
     <form class="" action="<?= BASE ?>task/actions" method="post">
     <h4 class="text-center">Tareas para otros dias</h4>
-
+<!--
     <?php
 
     TaskController::showTaskBien();
@@ -57,7 +57,7 @@
 
     </form>
 
-
+-->
 
 <?php
 
