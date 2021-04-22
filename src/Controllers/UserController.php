@@ -82,7 +82,7 @@ use App\Session;
             
             $correo = filter_input(INPUT_POST, "correo");
             $correo = $correo."@correo.com";
-            //$name = filter_input(INPUT_POST, "name");
+            $name = filter_input(INPUT_POST, "name");
             $pass = filter_input(INPUT_POST, "pass");
             $pass2 = filter_input(INPUT_POST, "pass2");
 
